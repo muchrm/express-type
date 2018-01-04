@@ -19,6 +19,7 @@
   "dependencies": {
     "change-case": "^3.0.1",
     "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc1",
     "require-dir": "^0.3.2"
   }
 }

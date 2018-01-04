@@ -4,8 +4,10 @@ const routes = require('require-dir')();
 
 export default function(app) {
   Object.keys(routes).forEach(function(routeName) {
-    var router = express.Router();
-    require(`./${routeName}`).default(router)
-    app.use('/' + changeCase.paramCase(routeName), router);
-  }); 
+    if(routeName != 'route'){
+      var router = express.Router();
+      require(`./${routeName}`).default(router)
+      app.use('/' + changeCase.paramCase(routeName), router);
+    }
+  });
 };

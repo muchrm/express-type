@@ -1,15 +1,20 @@
 export class Controller {
-    protected repository
-    index(){
-        return this.repository.all();
+    constructor(protected repository){
     }
-    show(id){
+    index(req, res, next){
+        // return this.repository.all();
+        res.json({"data":"kuy"})
+    }
+    show(req, res, next){
         return this.repository.find();
     }
-    update(){
+    update(req, res, next){
         return this.repository.update();
     }
-    destroy(){
+    destroy(req, res, next){
         return this.repository.delete();
+    }
+    store(req, res, next){
+        return this.repository.create();
     }
 }

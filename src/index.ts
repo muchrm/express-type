@@ -1,5 +1,10 @@
 import * as express from 'express'
+import * as mongoose from './config/mongoose'
 import routes from './routes'
+
+Promise = require('bluebird');
+mongoose.connect();
+
 const app = express();
 const port = process.env.PORT || 3000
 
